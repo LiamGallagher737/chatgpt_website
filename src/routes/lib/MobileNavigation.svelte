@@ -16,7 +16,7 @@
     #mobile-navigation {
         width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         background: white;
         z-index: 100;
         top: 0;

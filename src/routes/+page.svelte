@@ -21,7 +21,7 @@
 <Navbar bind:mobile_nav_open />
 
 {#if innerWidth < 720}
-<MobileNavigation bind:mobile_nav_open />
+    <MobileNavigation bind:mobile_nav_open />
 {/if}
 
 <Content>
