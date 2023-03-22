@@ -57,5 +57,9 @@
         p {
             font-size: 0.9rem;
         }
+
+        img {
+            max-width: min(100%, 200px);
+        }
     }
 </style>

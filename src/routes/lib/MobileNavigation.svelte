@@ -1,5 +1,14 @@
 <script lang="ts">
+    import Link from "./Link.svelte";
+
     export let mobile_nav_open: Boolean;
+
+    import { navlinks } from "./navlinks";
+    let links: { name: string; url: string }[];
+
+    navlinks.subscribe((value) => {
+        links = value;
+    });
 </script>
 
 <div id="tint" class={mobile_nav_open ? "active" : ""} />
@@ -10,6 +19,15 @@
             <img src="icons/close.svg" alt="Close Menu" />
         </button>
     </div>
+    <ul class="links">
+        {#each links as link}
+            <li>
+                <a href={link.url}>
+                    <Link name={link.name} />
+                </a>
+            </li>
+        {/each}
+    </ul>
 </div>
 
 <style>
@@ -47,6 +65,7 @@
         width: calc(100% - 40px);
         height: 72px;
         padding: 0 20px;
+        position: fixed;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -55,5 +74,24 @@
     .navbar-title {
         font-size: 1.5rem;
         font-weight: 600;
+    }
+
+    .links {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .links a {
+        text-decoration: none;
+        font-size: 2rem;
+        color: black;
     }
 </style>

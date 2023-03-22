@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Link from "./Link.svelte";
+
     export let mobile_nav_open: Boolean;
 
     import { navlinks } from "./navlinks";
@@ -25,8 +27,7 @@
             <div class="nav-links">
                 {#each links as link}
                     <a href={link.url} class="nav-link">
-                        {link.name}
-                        <span class="link-underline" />
+                        <Link name={link.name} />
                     </a>
                 {/each}
             </div>
@@ -59,18 +60,5 @@
     .nav-link {
         color: black;
         text-decoration: none;
-    }
-
-    .link-underline {
-        display: block;
-        height: 2px;
-        width: 100%;
-        scale: 0;
-        background: black;
-        transition: 0.3s;
-    }
-
-    .nav-link:hover .link-underline {
-        scale: 100%;
     }
 </style>
