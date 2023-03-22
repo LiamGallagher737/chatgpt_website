@@ -70,6 +70,14 @@
         </div>
     </section>
 
+    <section id="quick-generation">
+        <div>
+            <h2>It's fast!</h2>
+            <p>Generate text instantaneously and images in seconds</p>
+        </div>
+        <img src="images/stopwatch.webp" alt="ai generated stopwatch" loading="lazy" />
+    </section>
+
     <section id="image-generation">
         <h2 class="header">Image Generation</h2>
         <div class="subsection-links">
@@ -95,14 +103,14 @@
             {#if image_section === "Visualize"}
                 <Card
                     title="Visual Aids"
-                    description="AI can help students visualize concepts and make them more concrete and understandable"
-                    image=""
+                    description="Need to picture a chicken standing on an elephant? AI can do that!"
+                    image="images/elephant.webp"
                 />
-                <Card
+                <!-- <Card
                     title="Quickly"
-                    description="Teachers can quickly create custom images and diagrams that meet their teaching needs"
+                    description="Need a quick diagram to showcase something to your students? AI can do that too!"
                     image=""
-                />
+                /> -->
             {/if}
         </div>
     </section>
@@ -139,7 +147,7 @@
     }
 
     section {
-        margin-top: 8rem;
+        margin-top: 6rem;
     }
 
     section .header {
@@ -173,6 +181,21 @@
         gap: 20px;
     }
 
+    #quick-generation {
+        background: #ff7f5f;
+        padding: 1rem;
+        color: white;
+        border-radius: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+    }
+
+    #quick-generation img {
+        width: 100%;
+    }
+
     @media only screen and (max-width: 330px) {
         .title {
             font-size: 1.8rem;
@@ -193,9 +216,29 @@
             display: block;
             margin: 0 auto;
         }
+
+        #quick-generation {
+            padding: 1rem 2rem;
+        }
     }
 
     @media only screen and (min-width: 600px) {
+        #quick-generation {
+            flex-direction: row;
+            text-align: left;
+            align-items: center;
+        }
+
+        #quick-generation h2 {
+            font-size: 2rem;
+        }
+
+        #quick-generation img {
+            max-width: 300px;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
         section .header {
             font-size: 2.5rem;
         }
@@ -221,6 +264,22 @@
 
         .hero-img {
             max-width: 400px;
+        }
+
+        #quick-generation {
+            padding: 1rem 6rem;
+        }
+
+        #quick-generation h2 {
+            font-size: 2.5rem;
+        }
+
+        #quick-generation p {
+            font-size: 1.2rem;
+        }
+
+        #quick-generation img {
+            max-width: 350px;
         }
     }
 

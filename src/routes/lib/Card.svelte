@@ -6,11 +6,11 @@
 </script>
 
 <div class="card">
-    <div class="text">
+    <div>
         <h3>{title}</h3>
         <p>{description}</p>
     </div>
-    <img src={image} alt="" />
+    <img src={image} alt="" loading="lazy" />
 </div>
 
 <style>
@@ -20,6 +20,7 @@
         border-radius: 20px;
         cursor: pointer;
         display: flex;
+        align-items: center;
         flex-direction: row;
     }
 
@@ -31,10 +32,9 @@
         margin-top: 1rem;
     }
 
-    .card p {
+    p {
         width: 100%;
-        font-size: 0.7rem;
-        /* font-weight: 600; */
+        font-size: 0.75rem;
         text-align: center;
     }
 
@@ -49,5 +49,13 @@
         scale: 1.05;
     }
 
-    /* @media only screen and (min-width: 400px) { */
+    @media only screen and (min-width: 900px) {
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
 </style>
