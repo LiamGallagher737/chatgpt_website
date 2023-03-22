@@ -20,6 +20,10 @@
         transition: 0.3s;
     }
 
+    button:hover span, button:active span {
+        scale: 100%;
+    }
+
     .selected {
         scale: 100%;
     }
