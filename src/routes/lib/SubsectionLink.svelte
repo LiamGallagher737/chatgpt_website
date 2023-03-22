@@ -2,9 +2,9 @@
     import Link from "./Link.svelte";
 
     export let name: string;
-    export let current_selection: string;
+    export let selection: string;
 </script>
 
-<button on:click={() => (current_selection = name)}>
-    <Link name={name} active={current_selection === name} />
+<button on:click={() => (selection = name)}>
+    <Link {name} active={selection === name} />
 </button>

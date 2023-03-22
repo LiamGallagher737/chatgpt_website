@@ -23,10 +23,22 @@ export async function GET({ request }) {
         }]
     });
 
+    console.log(res);
+
+    if (res.status !== 200) {
+        return json({
+            status: res.status,
+            statusText: res.statusText,
+        });
+    }
+
     let response = res.data.choices[0].message?.content;
 
     if (response === undefined) {
-        return new Response("Failed to get response", { status: 500 });
+        return json({
+            status: 500,
+            statusText: "Failed to get a response from OpenAI"
+        });
     }
 
     return json({

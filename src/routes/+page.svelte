@@ -22,10 +22,10 @@
 <section id="text-generation">
     <h2 class="header">Text Generation</h2>
     <div class="subsection-links">
-        <SubsectionLink name="Feedback" bind:current_selection={text_section} />
-        <SubsectionLink name="Planning" bind:current_selection={text_section} />
-        <SubsectionLink name="Learning" bind:current_selection={text_section} />
-        <SubsectionLink name="Research" bind:current_selection={text_section} />
+        <SubsectionLink name="Feedback" bind:selection={text_section} />
+        <SubsectionLink name="Planning" bind:selection={text_section} />
+        <SubsectionLink name="Learning" bind:selection={text_section} />
+        <SubsectionLink name="Research" bind:selection={text_section} />
     </div>
 
     <div class="cards">
@@ -59,16 +59,10 @@
 <section id="image-generation">
     <h2 class="header">Image Generation</h2>
     <div class="subsection-links">
-        <SubsectionLink
-            name="Visualize"
-            bind:current_selection={image_section}
-        />
-        <SubsectionLink name="Imerse" bind:current_selection={image_section} />
-        <SubsectionLink
-            name="Accessibility"
-            bind:current_selection={image_section}
-        />
-        <SubsectionLink name="Engage" bind:current_selection={image_section} />
+        <SubsectionLink name="Visualize" bind:selection={image_section} />
+        <SubsectionLink name="Imerse" bind:selection={image_section} />
+        <SubsectionLink name="Accessibility" bind:selection={image_section} />
+        <SubsectionLink name="Engage" bind:selection={image_section} />
     </div>
 
     <div class="cards">
@@ -140,7 +134,7 @@
         font-size: 18px;
         margin: 0 auto;
         max-width: fit-content;
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
         overflow: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;

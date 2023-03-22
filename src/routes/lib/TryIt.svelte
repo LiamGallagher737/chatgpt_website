@@ -3,6 +3,7 @@
     let request: Promise<any> | null = null;
 
     async function ask(form: any) {
+        request = null;
         let question: string = form.target.elements.question.value;
         loading_response = true;
         request = fetch("/try", {
@@ -27,9 +28,19 @@
     {#await request}
         <p id="ai-response">The AI is thinking! 😁</p>
     {:then res}
-        <pre id="ai-response">
-            {res.response}
-        </pre>
+        {#if res.response !== undefined}
+            <pre id="ai-response">
+                {res.response}
+            </pre>
+        {:else}
+            <p id="ai-response">
+                Unfortunately an error occured 😭
+                <br />
+                Status: {res.status}
+                <br>
+                Error: {res.statusText}
+            </p>
+        {/if}
     {:catch error}
         <p id="ai-response">
             Unfortunately an error occured 😭
