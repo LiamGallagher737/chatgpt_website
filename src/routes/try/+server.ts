@@ -29,9 +29,7 @@ export async function GET({ request }) {
         return new Response("Failed to get response", { status: 500 });
     }
 
-    console.log(response);
-
     return json({
-        response,
+        response: response.trim(),
     });
 }

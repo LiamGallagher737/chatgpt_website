@@ -1,23 +1,24 @@
 <script lang="ts">
-    // let loading_response = false;
+    let loading_response = false;
     let request: Promise<any> | null = null;
 
     async function ask(form: any) {
         let question: string = form.target.elements.question.value;
+        loading_response = true;
         request = fetch("/try", {
             method: "GET",
             headers: {
                 question,
             },
-        }).then((e) => e.json());
-        let res = await request;
-        console.log(res.json());
+        })
+            .then((e) => e.json())
+            .finally(() => (loading_response = false));
     }
 </script>
 
 <form on:submit|preventDefault={ask}>
     <input type="text" name="question" placeholder="Go on..." />
-    {#if request === null}
+    {#if !loading_response}
         <button type="submit">Ask</button>
     {/if}
 </form>
