@@ -19,6 +19,18 @@
     </div>
 </div>
 
+<!-- <section id="about">
+    <h2 class="header">What is AI?</h2>
+    <p>
+        Artificial Intelligence, or AI, is a type of computer technology that is
+        designed to do things that usually require human intelligence, such as
+        solving problems and making decisions. It is like a smart robot that can
+        learn new things and think on its own. AI is becoming more important in
+        many areas of our lives, including education. This technology has the
+        potential to change the way we learn and teach in the future.
+    </p>
+</section> -->
+
 <section id="text-generation">
     <h2 class="header">Text Generation</h2>
     <div class="subsection-links">

@@ -1,0 +1,146 @@
+<section id="chatbot">
+    <div class="content">
+        <h2 class="header">Chat Bots</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+            quisquam aliquam assumenda ex? Repellat doloremque ullam eveniet, et
+            eos odio!
+        </p>
+        <div class="links">
+            <a href="https://openai.com/blog/chatgpt" target="_blank">ChatGPT</a
+            >
+            <a
+                href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx"
+                target="_blank">Bing Chat</a
+            >
+        </div>
+    </div>
+    <img src="images/chatbot.webp" alt="" />
+</section>
+
+<section id="image-generation">
+    <div class="content">
+        <h2 class="header">Image Generators</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+            quisquam aliquam assumenda ex? Repellat doloremque ullam eveniet, et
+            eos odio!
+        </p>
+        <div class="links">
+            <a href="https://openai.com/product/dall-e-2" target="_blank"
+                >DALLE 2</a
+            >
+            <a href="https://www.bing.com/images/create" target="_blank"
+                >Image Creator</a
+            >
+            <a
+                href="https://docs.midjourney.com/docs/quick-start"
+                target="_blank">Midjourney</a
+            >
+        </div>
+    </div>
+    <img src="images/artwork.webp" alt="" />
+</section>
+
+<section id="voice-generation">
+    <div class="content">
+        <h2 class="header">Voices</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+            quisquam aliquam assumenda ex? Repellat doloremque ullam eveniet, et
+            eos odio!
+        </p>
+        <div class="links">
+            <a href="https://www.altered.ai/" target="_blank">Altered</a>
+        </div>
+    </div>
+    <img src="images/speaking.webp" alt="" />
+</section>
+
+<style>
+    .header {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1rem auto;
+        justify-content: center;
+    }
+
+    a {
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+        display: block;
+        width: fit-content;
+        color: black;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover,
+    a:focus {
+        background: black;
+        color: white;
+    }
+
+    img {
+        max-width: min(100%, 400px);
+        margin: 0 auto;
+        display: block;
+    }
+
+    @media only screen and (min-width: 450px) {
+        p {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        section {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 2rem;
+            margin-top: 6rem;
+            align-items: center;
+        }
+
+        img {
+            max-width: 300px;
+        }
+
+        p,
+        .header {
+            text-align: left;
+        }
+
+        .header {
+            margin-top: 0;
+        }
+
+        .links {
+            justify-content: left;
+            margin-bottom: 0;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        img {
+            max-width: 400px;
+        }
+    }
+</style>

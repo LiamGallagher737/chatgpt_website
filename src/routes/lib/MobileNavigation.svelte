@@ -22,7 +22,7 @@
     <ul class="links">
         {#each links as link}
             <li>
-                <a href={link.url}>
+                <a href={link.url} on:click={() => (mobile_nav_open = false)}>
                     <Link name={link.name} />
                 </a>
             </li>

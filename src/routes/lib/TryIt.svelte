@@ -6,12 +6,20 @@
         request = null;
         let question: string = form.target.elements.question.value;
         loading_response = true;
-        request = fetch("/try", {
+        request = fetch("/api/try", {
             method: "GET",
             headers: {
                 question,
             },
         })
+            .then((e) => {
+                if (e.status !== 200) {
+                    throw new Error(
+                        `Status: ${e.status}. Message: ${e.statusText}.`
+                    );
+                }
+                return e;
+            })
             .then((e) => e.json())
             .finally(() => (loading_response = false));
     }
@@ -28,19 +36,7 @@
     {#await request}
         <p id="ai-response">The AI is thinking! 😁</p>
     {:then res}
-        {#if res.choices[0].message !== undefined}
-            <pre id="ai-response">
-                {res.choices[0].message.content}
-            </pre>
-        {:else}
-            <p id="ai-response">
-                Unfortunately an error occured
-                <br />
-                Status: {res.status}
-                <br />
-                Error: {res.statusText}
-            </p>
-        {/if}
+        <pre id="ai-response">{res.choices[0].message.content.trim()}</pre>
     {:catch error}
         <p id="ai-response">
             An error occured
@@ -59,6 +55,7 @@
         width: min(100%, 600px);
         margin: 0 auto;
         display: block;
+        box-sizing: border-box;
         padding: 1.5rem;
         background: #f4f4f4;
         border: none;

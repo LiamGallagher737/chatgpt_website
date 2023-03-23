@@ -2,6 +2,6 @@ import { writable } from 'svelte/store';
 
 export const navlinks = writable([
     { name: 'Home', url: '/' },
-    { name: 'Page 2', url: '/p2' },
+    { name: 'Tools', url: '/tools' },
     { name: 'Page 3', url: '/p3' },
 ]);
