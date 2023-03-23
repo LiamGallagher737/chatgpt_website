@@ -20,28 +20,33 @@ export async function GET({ request }) {
         messages: [{
             role: "user",
             content: question,
-        }]
+        }],
     });
 
-    console.log(res);
+    console.log(res.data.choices[0].message);
 
-    if (res.status !== 200) {
-        return json({
-            status: res.status,
-            statusText: res.statusText,
-        });
-    }
-
-    let response = res.data.choices[0].message?.content;
-
-    if (response === undefined) {
-        return json({
-            status: 500,
-            statusText: "Failed to get a response from OpenAI"
-        });
-    }
-
-    return json({
-        response: response.trim(),
+    return json(res.data, {
+        status: res.status,
+        statusText: res.statusText,
     });
+
+    // if (res.status !== 200) {
+    //     return json({
+    //         status: res.status,
+    //         statusText: res.statusText,
+    //     });
+    // }
+
+    // let response = res.data.choices[0].message?.content;
+
+    // if (response === undefined) {
+    //     return json({
+    //         status: 500,
+    //         statusText: "Failed to get a response from OpenAI"
+    //     });
+    // }
+
+    // return json({
+    //     response: response.trim(),
+    // });
 }

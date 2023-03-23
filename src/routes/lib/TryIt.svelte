@@ -28,22 +28,22 @@
     {#await request}
         <p id="ai-response">The AI is thinking! 😁</p>
     {:then res}
-        {#if res.response !== undefined}
+        {#if res.choices[0].message !== undefined}
             <pre id="ai-response">
-                {res.response}
+                {res.choices[0].message.content}
             </pre>
         {:else}
             <p id="ai-response">
-                Unfortunately an error occured 😭
+                Unfortunately an error occured
                 <br />
                 Status: {res.status}
-                <br>
+                <br />
                 Error: {res.statusText}
             </p>
         {/if}
     {:catch error}
         <p id="ai-response">
-            Unfortunately an error occured 😭
+            An error occured
             <br />
             {error.message}
         </p>
