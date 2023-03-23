@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Ai Edu | Tools</title>
+</svelte:head>
+
 <section id="chatbot">
     <div class="content">
         <h2 class="header">Chat Bots</h2>
@@ -12,6 +16,10 @@
             <a
                 href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx"
                 target="_blank">Bing Chat</a
+            >
+            <a
+                href="https://bard.google.com/"
+                target="_blank">Bard</a
             >
         </div>
     </div>
@@ -37,6 +45,10 @@
                 href="https://docs.midjourney.com/docs/quick-start"
                 target="_blank">Midjourney</a
             >
+            <a
+                href="https://firefly.adobe.com/"
+                target="_blank">Firefly</a
+            >
         </div>
     </div>
     <img src="images/artwork.webp" alt="" />
@@ -52,6 +64,7 @@
         </p>
         <div class="links">
             <a href="https://www.altered.ai/" target="_blank">Altered</a>
+            <a href="https://podcast.adobe.com/" target="_blank">Adobe Podcast</a>
         </div>
     </div>
     <img src="images/speaking.webp" alt="" />
