@@ -6,9 +6,8 @@
     <div class="content">
         <h2 class="header">Chat Bots</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
-            quisquam aliquam assumenda ex? Repellat doloremque ullam eveniet, et
-            eos odio!
+            Ai chatbots like OpenAI's Chat-GPT are capable of simulating human conversation,
+            you can ask them questions or even ask them to write you an essay!
         </p>
         <div class="links">
             <a href="https://openai.com/blog/chatgpt" target="_blank">ChatGPT</a
@@ -17,10 +16,7 @@
                 href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx"
                 target="_blank">Bing Chat</a
             >
-            <a
-                href="https://bard.google.com/"
-                target="_blank">Bard</a
-            >
+            <a href="https://bard.google.com/" target="_blank">Bard</a>
         </div>
     </div>
     <img src="images/chatbot.webp" alt="" />
@@ -30,9 +26,9 @@
     <div class="content">
         <h2 class="header">Image Generators</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
-            quisquam aliquam assumenda ex? Repellat doloremque ullam eveniet, et
-            eos odio!
+            Ai image generators can create realistic or stylistic from scratch, with
+            applications in art, design, gaming, and advertising. They can also enhance
+            image resolution and modify images.
         </p>
         <div class="links">
             <a href="https://openai.com/product/dall-e-2" target="_blank"
@@ -45,10 +41,7 @@
                 href="https://docs.midjourney.com/docs/quick-start"
                 target="_blank">Midjourney</a
             >
-            <a
-                href="https://firefly.adobe.com/"
-                target="_blank">Firefly</a
-            >
+            <a href="https://firefly.adobe.com/" target="_blank">Firefly</a>
         </div>
     </div>
     <img src="images/artwork.webp" alt="" />
@@ -58,13 +51,15 @@
     <div class="content">
         <h2 class="header">Voices</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
-            quisquam aliquam assumenda ex? Repellat doloremque ullam eveniet, et
-            eos odio!
+            Ai tools like Altered can transform your voice into a different character,
+            perfect for story telling. Or maybe you want to improve the quality of
+            your audio, Adobe podcast can make your audio sound professional.
         </p>
         <div class="links">
             <a href="https://www.altered.ai/" target="_blank">Altered</a>
-            <a href="https://podcast.adobe.com/" target="_blank">Adobe Podcast</a>
+            <a href="https://podcast.adobe.com/" target="_blank"
+                >Adobe Podcast</a
+            >
         </div>
     </div>
     <img src="images/speaking.webp" alt="" />
