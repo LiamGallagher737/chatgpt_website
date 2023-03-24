@@ -3,13 +3,13 @@
     export let active: Boolean = false;
 </script>
 
-<div class="link">
+<span class="link">
     {name}
     <span class="underline {active ? 'active' : ''}" />
-</div>
+</span>
 
 <style>
-    span {
+    .underline {
         display: block;
         height: 2px;
         width: 100%;
@@ -18,7 +18,7 @@
         transition: 0.3s;
     }
 
-    .link:hover span,
+    .link:hover .underline,
     .active {
         scale: 100%;
     }
