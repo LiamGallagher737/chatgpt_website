@@ -11,7 +11,7 @@
 
 <Navbar bind:mobile_nav_open />
 
-{#if innerWidth < 450}
+{#if innerWidth < 600}
     <MobileNavigation bind:mobile_nav_open />
 {/if}
 
