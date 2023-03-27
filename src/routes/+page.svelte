@@ -84,11 +84,6 @@
                 description="Need to picture a chicken standing on an elephant? AI can do that!"
                 image="images/elephant.webp"
             />
-            <!-- <Card
-                    title="Quickly"
-                    description="Need a quick diagram to showcase something to your students? AI can do that too!"
-                    image=""
-                /> -->
         {/if}
     </div>
 </section>

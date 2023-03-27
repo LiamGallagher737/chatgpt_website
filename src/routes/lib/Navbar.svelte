@@ -1,14 +1,9 @@
 <script lang="ts">
     import Link from "./Link.svelte";
+    import { page } from "$app/stores";
+    import { navlinks } from "./navlinks";
 
     export let mobile_nav_open: Boolean;
-
-    import { navlinks } from "./navlinks";
-    let links: { name: string; url: string }[];
-
-    navlinks.subscribe((value) => {
-        links = value;
-    });
 
     let innerWidth = 0;
     let scrollY = 0;
@@ -16,27 +11,43 @@
 
 <svelte:window bind:innerWidth bind:scrollY />
 
-<nav class="navbar">
-    <a href="/" class="navbar-title nav-link">AI EDU</a>
-    <div class="nav-items">
-        {#if innerWidth < 600}
-            <button on:click={() => (mobile_nav_open = true)}>
-                <img src="icons/hamburger.svg" alt="Open Menu" />
-            </button>
-        {:else}
-            <div class="nav-links">
-                {#each links as link}
-                    <a href={link.url} class="nav-link">
-                        <Link name={link.name} />
-                    </a>
-                {/each}
-            </div>
-        {/if}
-    </div>
-</nav>
+<div class="nav-container {scrollY > 50 ? 'shadow' : ''}">
+    <nav class="navbar">
+        <a href="/" class="navbar-title nav-link">AI EDU</a>
+        <div class="nav-items">
+            {#if innerWidth < 600}
+                <button on:click={() => (mobile_nav_open = true)}>
+                    <img src="icons/hamburger.svg" alt="Open Menu" />
+                </button>
+            {:else}
+                <div class="nav-links">
+                    {#each $navlinks as link}
+                        <a href={link.url} class="nav-link">
+                            <Link
+                                name={link.name}
+                                active={$page.route.id === link.url}
+                            />
+                        </a>
+                    {/each}
+                </div>
+            {/if}
+        </div>
+    </nav>
+</div>
 
 <style>
+    .nav-container {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: white;
+        z-index: 500;
+        transition: 0.3s;
+    }
+
     .navbar {
+        position: sticky;
+        top: 0;
         width: calc(100% - 40px);
         max-width: 1100px;
         margin: 0 auto;
@@ -60,5 +71,9 @@
     .nav-link {
         color: black;
         text-decoration: none;
+    }
+
+    .shadow {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     }
 </style>

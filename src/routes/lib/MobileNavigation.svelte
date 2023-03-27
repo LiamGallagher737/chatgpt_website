@@ -1,14 +1,9 @@
 <script lang="ts">
     import Link from "./Link.svelte";
+    import { page } from "$app/stores";
+    import { navlinks } from "./navlinks";
 
     export let mobile_nav_open: Boolean;
-
-    import { navlinks } from "./navlinks";
-    let links: { name: string; url: string }[];
-
-    navlinks.subscribe((value) => {
-        links = value;
-    });
 </script>
 
 <div id="tint" class={mobile_nav_open ? "active" : ""} />
@@ -20,10 +15,13 @@
         </button>
     </div>
     <ul class="links">
-        {#each links as link}
+        {#each $navlinks as link}
             <li>
                 <a href={link.url} on:click={() => (mobile_nav_open = false)}>
-                    <Link name={link.name} />
+                    <Link
+                        name={link.name}
+                        active={$page.route.id === link.url}
+                    />
                 </a>
             </li>
         {/each}
