@@ -1,6 +1,5 @@
 <script lang="ts">
     import Link from "./Link.svelte";
-    import { page } from "$app/stores";
     import { navlinks } from "./navlinks";
 
     export let mobile_nav_open: Boolean;
@@ -20,7 +19,6 @@
                 <a href={link.url} on:click={() => (mobile_nav_open = false)}>
                     <Link
                         name={link.name}
-                        active={$page.route.id === link.url}
                     />
                 </a>
             </li>

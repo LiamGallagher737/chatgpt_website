@@ -36,7 +36,6 @@
     <div class="subsection-links">
         <SubsectionLink name="Feedback" bind:selection={text_section} />
         <SubsectionLink name="Planning" bind:selection={text_section} />
-        <SubsectionLink name="Learning" bind:selection={text_section} />
         <SubsectionLink name="Research" bind:selection={text_section} />
     </div>
 
@@ -45,12 +44,36 @@
             <Card
                 title="Instant Feedback"
                 description="Instant feedback helps students progress quicker and learn from their mistakes"
-                image="images/feedback.webp"
+                image="images/homepage/text-generation/feedback.webp"
             />
             <Card
                 title="Motivate Students"
                 description="Feedback builds confidence in students abilities and increase their desire to learn more"
-                image="images/modivate.webp"
+                image="images/homepage/text-generation/modivate.webp"
+            />
+        {/if}
+        {#if text_section === "Planning"}
+            <Card
+                title="Creating Assessments"
+                description="Input a topics you want to assess, and AI can generate a set of questions that align with your objectives"
+                image="images/homepage/text-generation/assessment.webp"
+            />
+            <Card
+                title="Lesson Plans"
+                description="Provide some information about a topic and learning goals and AI can generate a comprehensive lesson plan"
+                image="images/homepage/text-generation/plan.webp"
+            />
+        {/if}
+        {#if text_section === "Research"}
+            <Card
+                title="Gathering Information"
+                description="AI can assist in gathering information about a topic by summarizing articles, papers, and other sources"
+                image="images/homepage/text-generation/research.webp"
+            />
+            <Card
+                title="Generating Citations"
+                description="AI can help students and teachers generate citations for their research papers and other assignments"
+                image="images/homepage/text-generation/plan.webp"
             />
         {/if}
     </div>
@@ -82,7 +105,7 @@
             <Card
                 title="Visual Aids"
                 description="Need to picture a chicken standing on an elephant? AI can do that!"
-                image="images/elephant.webp"
+                image="images/homepage/image-generation/elephant.webp"
             />
         {/if}
     </div>
@@ -151,8 +174,8 @@
     }
 
     section .cards {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
@@ -232,7 +255,7 @@
         }
 
         section .cards {
-            flex-direction: row;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 

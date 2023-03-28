@@ -1,11 +1,110 @@
 <script lang="ts">
-    import GalleryImage from "./GalleryImage.svelte";
     import Chat from "./Chat.svelte";
+
+    const images = [
+        {
+            prompt: "Mona Lisa in style of Starry Night",
+            src: "images/gallery/primary/mona-lisa.webp",
+        },
+        {
+            prompt: "Futuristic Nike sneaker",
+            src: "images/gallery/primary/sneaker.webp",
+        },
+        {
+            prompt: "Hot air balloon, cosmos background",
+            src: "images/gallery/primary/hot-air-balloon.webp",
+        },
+        {
+            prompt: "Red, blue, black sneakers marketing",
+            src: "images/gallery/primary/sneaker-2.webp",
+        },
+        {
+            prompt: "Starry Night style Central Park painting",
+            src: "images/gallery/primary/central-park.webp",
+        },
+    ];
+
+    const secondaryImages = [
+        "images/gallery/secondary/cottage.webp",
+        "images/gallery/secondary/dinosaur.webp",
+        "images/gallery/secondary/house.webp",
+        "images/gallery/secondary/lobster.webp",
+        "images/gallery/secondary/mars.webp",
+        "images/gallery/secondary/paper-girl.webp",
+    ];
+
+    let currentImage = 0;
+    let prompt = "";
+
+    cycleImages();
+
+    async function cycleImages() {
+        while (true) {
+            let promptIndex = 0;
+            const p = images[currentImage].prompt;
+            while (promptIndex < p.length) {
+                prompt += p.at(promptIndex);
+                promptIndex++;
+                await sleep(100);
+            }
+
+            currentImage++;
+
+            if (currentImage === images.length) {
+                currentImage = 0;
+            }
+
+            await sleep(2000);
+
+            while (prompt.length > 0) {
+                prompt = prompt.slice(0, -1);
+                await sleep(25);
+            }
+
+            await sleep(250);
+        }
+    }
+
+    function sleep(ms: number) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    function wrap(num: number): number {
+        if (num < 0) {
+            return images.length - 1;
+        }
+        if (num >= images.length) {
+            return 0;
+        }
+        return num;
+    }
 </script>
 
 <svelte:head>
     <title>Ai Edu | Gallery</title>
 </svelte:head>
+
+<section id="images">
+    <div id="prompt">
+        <span>{prompt}</span>
+    </div>
+
+    <div id="primary-images">
+        {#each images as image, i}
+            <img
+                src={image.src}
+                alt={image.prompt}
+                style="opacity: {wrap(currentImage - 1) === i ? '1' : '0'}"
+            />
+        {/each}
+    </div>
+
+    <!-- <div id="secondary-images">
+        {#each secondaryImages as image}
+            <img src={image} alt="" />
+        {/each}
+    </div> -->
+</section>
 
 <section id="chat">
     <Chat
@@ -18,54 +117,65 @@
     />
 </section>
 
-<section id="images">
-    <GalleryImage
-        prompt={"A renaissance painting of an elephant in a tuxedo"}
-        url={"images/gallery/tuxedo-elephant.webp"}
-    />
-    <GalleryImage
-        prompt={"mona lisa in the style of starry night"}
-        url={"images/gallery/mona-lisa.webp"}
-    />
-    <GalleryImage
-        prompt={"a robot made of analog stereo equipment, digital art"}
-        url={"images/gallery/robot.webp"}
-    />
-    <GalleryImage
-        prompt={"Surreal landscape of a man standing in front of a portal to another dimension"}
-        url={"images/gallery/portal.webp"}
-    />
-    <GalleryImage
-        prompt={"futuristic nike sneaker, digital art, 3d render"}
-        url={"images/gallery/sneaker.webp"}
-    />
-    <GalleryImage
-        prompt={"a mirror monolith standing in the desert, light blue and pink sky, surreal, digital art, photorealistic"}
-        url={"images/gallery/monolith.webp"}
-    />
-</section>
-
 <style>
+    #prompt {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+        border-radius: 999px;
+        padding: 1rem 1.5rem;
+        width: fit-content;
+        margin: 0 auto;
+        transform: translateY(50%);
+        background: white;
+        z-index: 10;
+        position: relative;
+        min-height: 19px;
+        text-align: center;
+    }
+
+    #primary-images {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+
+    #primary-images img {
+        position: absolute;
+        left: 0;
+        transition: 1s;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    #secondary-images {
+        display: none;
+    }
+
     #chat {
         display: flex;
         flex-direction: column;
     }
 
-    #images {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: 1fr;
-    }
-
     @media only screen and (min-width: 600px) {
-        #images {
-            grid-template-columns: repeat(2, 1fr);
+        #primary-images {
+            max-width: 500px;
+            margin: 0 auto;
         }
     }
 
-    @media only screen and (min-width: 1000px) {
-        #images {
-            grid-template-columns: repeat(3, 1fr);
+    /* @media only screen and (min-width: 1000px) {
+        #secondary-images {
+            display: block;
         }
-    }
+
+        #secondary-images img {
+            position: fixed;
+        }
+
+        #secondary-images :nth-child(1) {
+            width: 200px;
+            left: 20px;
+            top: 100px;
+            rotate: -10deg;
+        }
+    } */
 </style>
