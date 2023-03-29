@@ -52,6 +52,12 @@
         scale: 1.05;
     }
 
+    @media only screen and (max-width: 360px) {
+        .card {
+            flex-direction: column;
+        }
+    }
+
     @media only screen and (min-width: 900px) {
         h3 {
             font-size: 1.2rem;

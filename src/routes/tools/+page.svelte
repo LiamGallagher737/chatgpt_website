@@ -19,7 +19,7 @@
             <a href="https://bard.google.com/" target="_blank">Bard</a>
         </div>
     </div>
-    <img src="images/chatbot.webp" alt="Person using a chatbot" />
+    <img src="images/tools/chatbot.webp" alt="Person using a chatbot" />
 </section>
 
 <section id="image-generation">
@@ -44,7 +44,7 @@
             <a href="https://firefly.adobe.com/" target="_blank">Firefly</a>
         </div>
     </div>
-    <img src="images/artwork.webp" alt="Artwork" />
+    <img src="images/tools/artwork.webp" alt="Artwork" />
 </section>
 
 <section id="voice-generation">
@@ -62,7 +62,7 @@
             >
         </div>
     </div>
-    <img src="images/speaking.webp" alt="Person Speaking" />
+    <img src="images/tools/speaking.webp" alt="Person Speaking" />
 </section>
 
 <style>

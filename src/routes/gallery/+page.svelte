@@ -1,6 +1,7 @@
 <script lang="ts">
     import Chat from "./Chat.svelte";
     import Carousel from "../lib/Carousel.svelte";
+    import HeroImages from "../lib/HeroImages.svelte";
 
     const images = [
         {
@@ -23,15 +24,6 @@
             prompt: "Starry Night style Central Park painting",
             src: "images/gallery/primary/central-park.webp",
         },
-    ];
-
-    const secondaryImages = [
-        "images/gallery/secondary/cottage.webp",
-        "images/gallery/secondary/dinosaur.webp",
-        "images/gallery/secondary/house.webp",
-        "images/gallery/secondary/lobster.webp",
-        "images/gallery/secondary/mars.webp",
-        "images/gallery/secondary/paper-girl.webp",
     ];
 
     const carouselImages = [

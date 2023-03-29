@@ -11,11 +11,11 @@
 
 <svelte:window bind:innerWidth bind:scrollY />
 
-<div class="nav-container {scrollY > 50 ? 'shadow' : ''}">
+<div class="nav-container {scrollY > 10 ? 'shadow' : ''}">
     <nav class="navbar">
         <a href="/" class="navbar-title nav-link">AI EDU</a>
         <div class="nav-items">
-            {#if innerWidth < 600}
+            {#if innerWidth < 680}
                 <button on:click={() => (mobile_nav_open = true)}>
                     <img src="icons/hamburger.svg" alt="Open Menu" />
                 </button>
