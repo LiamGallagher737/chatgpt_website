@@ -173,7 +173,7 @@
     .hero {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem;
     }
 
     .title {
@@ -182,6 +182,7 @@
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
+        margin: 0;
     }
 
     .hero-img-container {
@@ -271,10 +272,6 @@
     }
 
     @media only screen and (min-width: 400px) {
-        .hero {
-            gap: 1rem;
-        }
-
         .title {
             font-size: 2.5rem;
         }
