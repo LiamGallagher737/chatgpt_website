@@ -2,7 +2,7 @@
     <title>Ai Edu | Worries</title>
 </svelte:head>
 
-<section id="job-safety">
+<section id="cheating">
     <div class="content">
         <h2 class="header">Cheating</h2>
         <p>
