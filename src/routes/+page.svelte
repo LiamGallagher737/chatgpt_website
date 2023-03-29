@@ -43,13 +43,15 @@
         {#if text_section === "Feedback"}
             <Card
                 title="Instant Feedback"
-                description="Instant feedback helps students progress quicker and learn from their mistakes"
+                description="AI can read over a students work and find areas for them to improve on"
                 image="images/homepage/text-generation/feedback.webp"
+                href="opportunities#feedback"
             />
             <Card
                 title="Motivate Students"
                 description="Feedback builds confidence in students abilities and increase their desire to learn more"
                 image="images/homepage/text-generation/modivate.webp"
+                href="opportunities#feedback"
             />
         {/if}
         {#if text_section === "Planning"}
@@ -57,11 +59,13 @@
                 title="Creating Assessments"
                 description="Input a topics you want to assess, and AI can generate a set of questions that align with your objectives"
                 image="images/homepage/text-generation/assessment.webp"
+                href="opportunities#planning"
             />
             <Card
                 title="Lesson Plans"
                 description="Provide some information about a topic and learning goals and AI can generate a comprehensive lesson plan"
                 image="images/homepage/text-generation/plan.webp"
+                href="opportunities#planning"
             />
         {/if}
         {#if text_section === "Research"}
@@ -69,11 +73,13 @@
                 title="Gathering Information"
                 description="AI can assist in gathering information about a topic by summarizing articles, papers, and other sources"
                 image="images/homepage/text-generation/research.webp"
+                href="opportunities#research"
             />
             <Card
                 title="Generating Citations"
                 description="AI can help students and teachers generate citations for their research papers and other assignments"
                 image="images/homepage/text-generation/plan.webp"
+                href="opportunities#research"
             />
         {/if}
     </div>
@@ -95,8 +101,6 @@
     <h2 class="header">Image Generation</h2>
     <div class="subsection-links">
         <SubsectionLink name="Visualize" bind:selection={image_section} />
-        <SubsectionLink name="Imerse" bind:selection={image_section} />
-        <SubsectionLink name="Accessibility" bind:selection={image_section} />
         <SubsectionLink name="Engage" bind:selection={image_section} />
     </div>
 
@@ -106,6 +110,27 @@
                 title="Visual Aids"
                 description="Need to picture a chicken standing on an elephant? AI can do that!"
                 image="images/homepage/image-generation/elephant.webp"
+                href="opportunities#visualize"
+            />
+            <Card
+                title="Drawings"
+                description="Generate a realistic drawing of anything in seconds!"
+                image="images/homepage/image-generation/heart.webp"
+                href="opportunities#visualize"
+            />
+        {/if}
+        {#if image_section === "Engage"}
+            <Card
+                title="Visual Appeal"
+                description="Visually appealing images help keep students attention, AI can easily do this"
+                image="images/homepage/image-generation/islands.webp"
+                href="opportunities#visualize"
+            />
+            <Card
+                title="Personalization"
+                description="AI can create personalized images that are tailored to students' interests and learning styles"
+                image="images/homepage/image-generation/student.webp"
+                href="opportunities#visualize"
             />
         {/if}
     </div>

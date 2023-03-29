@@ -2,16 +2,17 @@
     export let title: string;
     export let description: string;
     export let image: string;
+    export let href: string;
     // export let link: string;
 </script>
 
-<div class="card">
+<a href={href} class="card">
     <div>
         <h3>{title}</h3>
         <p>{description}</p>
     </div>
     <img src={image} alt="" loading="lazy" />
-</div>
+</a>
 
 <style>
     .card {
@@ -22,6 +23,8 @@
         display: flex;
         align-items: center;
         flex-direction: row;
+        text-decoration: none;
+        color: black;
     }
 
     h3 {

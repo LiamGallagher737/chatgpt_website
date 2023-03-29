@@ -1,5 +1,6 @@
 <script lang="ts">
     import Chat from "./Chat.svelte";
+    import Carousel from "../lib/Carousel.svelte";
 
     const images = [
         {
@@ -31,6 +32,19 @@
         "images/gallery/secondary/lobster.webp",
         "images/gallery/secondary/mars.webp",
         "images/gallery/secondary/paper-girl.webp",
+    ];
+
+    const carouselImages = [
+        [
+            "images/gallery/elephant/0.webp",
+            "images/gallery/elephant/1.webp",
+            "images/gallery/elephant/2.webp",
+            "images/gallery/elephant/3.webp",
+            "images/gallery/elephant/4.webp",
+            "images/gallery/elephant/5.webp",
+            "images/gallery/elephant/6.webp",
+            "images/gallery/elephant/7.webp",
+        ]
     ];
 
     let currentImage = 0;
@@ -98,12 +112,10 @@
             />
         {/each}
     </div>
+</section>
 
-    <!-- <div id="secondary-images">
-        {#each secondaryImages as image}
-            <img src={image} alt="" />
-        {/each}
-    </div> -->
+<section id="carousels">
+    <Carousel images={carouselImages[0]} credit="@midjourney.gallery on Instagram" />
 </section>
 
 <section id="chat">
@@ -146,10 +158,6 @@
         border-radius: 20px;
     }
 
-    #secondary-images {
-        display: none;
-    }
-
     #chat {
         display: flex;
         flex-direction: column;
@@ -157,25 +165,12 @@
 
     @media only screen and (min-width: 600px) {
         #primary-images {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
     }
 
-    /* @media only screen and (min-width: 1000px) {
-        #secondary-images {
-            display: block;
-        }
-
-        #secondary-images img {
-            position: fixed;
-        }
-
-        #secondary-images :nth-child(1) {
-            width: 200px;
-            left: 20px;
-            top: 100px;
-            rotate: -10deg;
-        }
-    } */
+    section {
+        margin-bottom: 6rem;
+    }
 </style>

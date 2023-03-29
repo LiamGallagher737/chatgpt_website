@@ -36,6 +36,7 @@
         top: 0;
         left: 100vw;
         transition: 0.5s;
+        z-index: 1000;
     }
 
     #tint {
