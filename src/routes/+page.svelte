@@ -10,23 +10,23 @@
     const images = [
         {
             prompt: "Mona Lisa in style of Starry Night",
-            src: "images/gallery/primary/mona-lisa.webp",
+            src: "images/home/hero/mona-lisa.webp",
         },
         {
             prompt: "Futuristic Nike sneaker",
-            src: "images/gallery/primary/sneaker.webp",
+            src: "images/home/hero/sneaker.webp",
         },
         {
             prompt: "Hot air balloon, cosmos background",
-            src: "images/gallery/primary/hot-air-balloon.webp",
+            src: "images/home/hero/hot-air-balloon.webp",
         },
         {
             prompt: "Red, blue, black sneakers marketing",
-            src: "images/gallery/primary/sneaker-2.webp",
+            src: "images/home/hero/sneaker-2.webp",
         },
         {
             prompt: "Starry Night style Central Park painting",
-            src: "images/gallery/primary/central-park.webp",
+            src: "images/home/hero/central-park.webp",
         },
     ];
 </script>

@@ -5,5 +5,5 @@ export const navlinks = writable([
     { name: 'Tools', url: '/tools' },
     { name: 'Opportunities', url: '/opportunities' },
     { name: 'Worries', url: '/worries' },
-    { name: 'Gallery', url: '/gallery' },
+    { name: 'Examples', url: '/examples' },
 ]);
